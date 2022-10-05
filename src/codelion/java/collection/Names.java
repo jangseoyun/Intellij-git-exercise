@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Names {
     private List<String> students;
+    private List<Student> studentList = new ArrayList<>();
 
     public Names() {
         this.students = new ArrayList<>();
@@ -107,6 +108,16 @@ public class Names {
         this.students.add("강서현");
         this.students.add("문찬율");
         this.students.add("한도현");
+    }
+
+    public List<Student> getStudentList() {
+        this.studentList.add(new Student(1, "김경록", "git@12345"));
+        this.studentList.add(new Student(2, "안예은", "git@12345"));
+        this.studentList.add(new Student(3, "조성윤", "git@12345"));
+        this.studentList.add(new Student(4, "하채민", "git@12345"));
+        this.studentList.add(new Student(5, "남우빈", "git@12345"));
+
+        return studentList;
     }
 
     public List<String> getStudents() {
