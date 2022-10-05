@@ -1,4 +1,4 @@
-package codelion.java.week3;
+package codelion.java.randomnum;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package codelion.java.week3;
+package codelion.java.randomnum;
 
 public class RandomCalculator {
 
@@ -28,7 +28,7 @@ public class RandomCalculator {
             System.out.println("랜덤하게 생성된 숫자가 0입니다");
         }
 
-        System.out.println(input / randomMachine.randomNum());
+        System.out.println((float) input / randomMachine.randomNum());
     }
 
 
