@@ -6,6 +6,6 @@ public class CalculatorMain {
         calculator.plus(10, 20);
         calculator.minus(20, 10);
         calculator.multiple(10, 20);
-        calculator.divide(20, 2);
+        System.out.println(calculator.divide(10, 20));
     }
 }
