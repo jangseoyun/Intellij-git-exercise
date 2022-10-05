@@ -2,11 +2,11 @@ package codelion.java.calculator;
 
 public class Main {
     public static void main(String[] args) {
-        NumberGenerator RandomNumberGenerator = new NumberGeneratorImpl();
-        Calculator calculator = new Calculator(RandomNumberGenerator);
-        calculator.plus();
+        NumberGenerator RandomNumberGenerator = new RandomNumberGenerator();
+        Calculator randomNumberCalculator = new Calculator(RandomNumberGenerator);
+        randomNumberCalculator.plus(30);
 
-        Calculator specificNumberGenerator = new Calculator(new SpecificNumberGenerator());
-        specificNumberGenerator.plus();
+        Calculator specificNumberGenerator = new Calculator(new SpecificNumberGenerator(), 200);
+        specificNumberGenerator.plus(50);
     }
 }
