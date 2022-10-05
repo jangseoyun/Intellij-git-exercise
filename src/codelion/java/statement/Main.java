@@ -8,7 +8,10 @@ public class Main {
         int first = sc.nextInt();
         int second = sc.nextInt();
 
-        EvenOdd evenOdd = new EvenOdd(first, second, new EnglishStatementMakerImpl());
-        evenOdd.createWord();
+        EvenOdd english = new EvenOdd(first, second, new EnglishStatementMakerImpl());
+        english.createWord();
+
+        EvenOdd korean = new EvenOdd(first, second, new KoreanStatementMakerImpl());
+        korean.createWord();
     }
 }
