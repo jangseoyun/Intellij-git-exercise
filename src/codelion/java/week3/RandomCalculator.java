@@ -23,8 +23,12 @@ public class RandomCalculator {
     }
 
     public void divide() {
-        //0은 randomMachine에서 처리
-        System.out.println((float) input / randomMachine.randomNum());
+
+        if (randomMachine.randomNum() == 0) {
+            System.out.println("랜덤하게 생성된 숫자가 0입니다");
+        }
+
+        System.out.println(input / randomMachine.randomNum());
     }
 
 
