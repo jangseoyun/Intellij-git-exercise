@@ -7,7 +7,6 @@ public class EvenOdd {
     //입력받은 값 홀수, 짝수 선별 및 언어 생성을 위해 값을 전달하는 역할
     private String result;
     private List<Integer> inputNums = new ArrayList<>();
-
     private List<String> checkResultObj = new ArrayList<>();
     private CalculateTranslation calculateTranslation;
 

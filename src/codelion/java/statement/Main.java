@@ -10,6 +10,5 @@ public class Main {
 
         EvenOdd evenOdd = new EvenOdd(first, second, new EnglishStatementMakerImpl());
         evenOdd.createWord();
-        System.out.println();
     }
 }
