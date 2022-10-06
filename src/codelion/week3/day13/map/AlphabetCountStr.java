@@ -9,17 +9,21 @@ public class AlphabetCountStr {
         int count = 0;
 
         for (int i = 0; i < address.length(); i++) {
+
             if (Character.isAlphabetic(address.charAt(i))) {
                 for (int j = 1; j < address.length(); j++) {
                     if (address.charAt(i) == address.charAt(j)) {
-                        count += 1;
+                        count ++;
                     }
                 }
+
                 addressMap.put(String.valueOf(address.charAt(i)), count);
                 count = 0;
             }
+
         }
-        System.out.println(addressMap.get('a'));
+
+        System.out.println(addressMap.get("a"));
         System.out.println(addressMap);
 
     }
