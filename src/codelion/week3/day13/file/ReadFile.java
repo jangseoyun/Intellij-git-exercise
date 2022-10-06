@@ -1,8 +1,6 @@
 package codelion.week3.day13.file;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.IOError;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
