@@ -1,10 +1,11 @@
 package codelion.week3.day13.map;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 public class AlphabetCntMap {
     public static void main(String[] args) {
-        String address = "https://github.com/Kyeongrok/like-lion-java";
+        String address = "https://github.com/Kyeongrok/like-lion-java".toLowerCase();
         HashMap<Character, Integer> addressMap = new HashMap<>();
         int count = 0;
 
