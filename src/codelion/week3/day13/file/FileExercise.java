@@ -15,3 +15,14 @@ public class FileExercise {
     }
 
 }
+
+//현재 디렉토리 보기
+/*./java-exercise-1005.iml
+./out
+./README.md
+./.gitignore
+./.git
+./a_file.txt
+./.idea
+./src
+*/
