@@ -7,9 +7,8 @@ public class AlphabetCntMap {
         String address = "https://github.com/Kyeongrok/like-lion-java";
         HashMap<Character, Integer> addressMap = new HashMap<>();
         int count = 0;
-        //첫번째 인덱스
-        for (int i = 0; i < address.length(); i++) {
 
+        for (int i = 0; i < address.length(); i++) {
             if (!Character.isAlphabetic(address.charAt(i))) {
                 i++;
             }
