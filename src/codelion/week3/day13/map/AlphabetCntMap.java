@@ -1,7 +1,6 @@
 package codelion.week3.day13.map;
 
 import java.util.HashMap;
-import java.util.Locale;
 
 public class AlphabetCntMap {
     public static void main(String[] args) {
@@ -10,17 +9,15 @@ public class AlphabetCntMap {
         int count = 0;
 
         for (int i = 0; i < address.length(); i++) {
-            if (!Character.isAlphabetic(address.charAt(i))) {
-                i++;
-            }
-
-            for (int j = 1; j < address.length(); j++) {
-                if (address.charAt(i) == address.charAt(j)) {
-                    count += 1;
+            if (Character.isAlphabetic(address.charAt(i))) {
+                for (int j = 1; j < address.length(); j++) {
+                    if (address.charAt(i) == address.charAt(j)) {
+                        count += 1;
+                    }
                 }
+                addressMap.put(address.charAt(i), count);
+                count = 0;
             }
-            addressMap.put(address.charAt(i), count);
-            count = 0;
         }
 
         System.out.println(addressMap);
