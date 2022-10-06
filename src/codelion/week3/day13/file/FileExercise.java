@@ -14,6 +14,14 @@ public class FileExercise {
         }
     }
 
+    public String read2Chars(String filename) throws IOException{
+        FileReader fileReader = new FileReader(filename);
+        String str = "";
+        str += (char) fileReader.read();
+        str += (char) fileReader.read();
+        return str;
+    }
+
     public char readAChar(String filename) throws IOException {// 한글자 읽어오기
         FileReader fileReader = new FileReader(filename);
         return (char) fileReader.read();
@@ -21,8 +29,9 @@ public class FileExercise {
 
     public static void main(String[] args) throws IOException {
         FileExercise fileExercise = new FileExercise();
-        char ch = fileExercise.readAChar("a_file.txt");
-        System.out.println(ch);
+        String str = fileExercise.read2Chars("a_file.txt");
+        //char ch = fileExercise.readAChar("a_file.txt");
+        System.out.println(str);
     }
 
 }
