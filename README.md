@@ -1,1 +1,3 @@
-# Intellij-git-exercise
+# 멋사 3주차
+
+## 22/10/06
