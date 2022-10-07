@@ -1,9 +1,6 @@
 package codelion.week3.day14.file;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -57,8 +54,8 @@ public class PopulationStatistice {
     public PopulationMove parse(String data) {//한줄 읽어와서 PopulationMove 인스턴스
         String[] splitLine = data.split(",");
         Integer fromSido = Integer.valueOf(splitLine[0]);//0번 전입 , 6번 전출
-        Integer toSido = Integer.valueOf(splitLine[6]);
-        return new PopulationMove(fromSido, toSido);
+        Integer toSido = Integer.valueOf(splitLine[1]);
+        return new PopulationMove(fromSido, toSido);//from, to
     }
 
     public void createAFile(String filename) {
@@ -70,18 +67,40 @@ public class PopulationStatistice {
             throw new RuntimeException(e);
         }
 
+    }
 
+    // List<String>을 지정한 파일에 write
+    public void write(List<String> strs, String filename) {
+        File file = new File(filename);
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            for (String str : strs) {
+                writer.write(str);
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String fromToString(PopulationMove populationMove) {
+        return populationMove.getFromSido() + "," + populationMove.getToSido() + "\n";
     }
 
     public static void main(String[] args) throws IOException {
-        String address = "/Users/seoyun/codeLion/2021_인구관련연간자료_20221007_32002.csv";
+        String address = "./from_to.txt";
         PopulationStatistice ps = new PopulationStatistice();
-        /*List<PopulationMove> pml = ps.readByLine(address);
-        System.out.println(pml.size());
+        List<PopulationMove> pml = ps.readByLine(address);//파일 읽어온뒤 객체로 만들어서 리스트에 담기
+
+        List<String> strings = new ArrayList<>();
         for (PopulationMove pm : pml) {
             System.out.printf("전입:%s, 전출:%s\n", pm.getFromSido(), pm.getToSido());
-        }*/
-
-        ps.createAFile("./from_to.txt");
+            /*String fromTo = ps.fromToString(pm);
+            strings.add(fromTo);*/
+        }
+        /*System.out.println(strings.size());
+        ps.write(strings, "./from_to.txt");*/
     }
 }
