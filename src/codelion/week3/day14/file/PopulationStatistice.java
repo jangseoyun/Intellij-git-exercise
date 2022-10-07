@@ -46,7 +46,7 @@ public class PopulationStatistice {
         br.close();
     }
 
-    public PopulationMove parse(String data) {//한줄 읽어옴
+    public PopulationMove parse(String data) {//한줄 읽어와서 PopulationMove 인스턴스
         String[] splitLine = data.split(",");
         Integer fromSido = Integer.valueOf(splitLine[0]);//0번 전입 , 6번 전출
         Integer toSido = Integer.valueOf(splitLine[6]);
