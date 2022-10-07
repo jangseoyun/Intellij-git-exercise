@@ -1,6 +1,7 @@
 package codelion.week3.day14.file;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -44,7 +45,7 @@ public class PopulationStatistice {
 
         String str;
         while ((str = br.readLine()) != null) {
-            System.out.println(str);
+            //System.out.println(str);
             PopulationMove pm = parse(str);
             pml.add(pm);
         }
@@ -60,10 +61,27 @@ public class PopulationStatistice {
         return new PopulationMove(fromSido, toSido);
     }
 
+    public void createAFile(String filename) {
+        File file = new File(filename);
+
+        try {
+            file.createNewFile();//이때 파일이 생성되는 것
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
     public static void main(String[] args) throws IOException {
         String address = "/Users/seoyun/codeLion/2021_인구관련연간자료_20221007_32002.csv";
         PopulationStatistice ps = new PopulationStatistice();
-        List<PopulationMove> pml = ps.readByLine(address);
+        /*List<PopulationMove> pml = ps.readByLine(address);
         System.out.println(pml.size());
+        for (PopulationMove pm : pml) {
+            System.out.printf("전입:%s, 전출:%s\n", pm.getFromSido(), pm.getToSido());
+        }*/
+
+        ps.createAFile("./from_to.txt");
     }
 }
