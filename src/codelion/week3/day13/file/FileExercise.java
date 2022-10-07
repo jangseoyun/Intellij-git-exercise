@@ -6,6 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileExercise {
+
+    private String filename;
+
+    public FileExercise(String filename) {
+        this.filename = filename;
+    }
+
     public void printFiles() throws FileNotFoundException {// 현재 디렉토리 확인
         File dir = new File("home:\\");
         File[] files = dir.listFiles();
@@ -14,7 +21,12 @@ public class FileExercise {
         }
     }
 
-    public String read2Chars(String filename) throws IOException{
+    public char readAChar(String filename) throws IOException {// 한글자 읽어오기
+        FileReader fileReader = new FileReader(filename);
+        return (char) fileReader.read();
+    }
+
+    public String read2Chars(String filename) throws IOException {
         FileReader fileReader = new FileReader(filename);
         String str = "";
         str += (char) fileReader.read();
@@ -22,15 +34,26 @@ public class FileExercise {
         return str;
     }
 
-    public char readAChar(String filename) throws IOException {// 한글자 읽어오기
-        FileReader fileReader = new FileReader(filename);
-        return (char) fileReader.read();
+    public String readNChars(int n) throws IOException {
+        FileReader fileReader = new FileReader(this.filename);
+        String str = "";
+        for (int i = 0; i < n; i++) {
+            int read = fileReader.read();
+
+            if (read == 1) {
+                return str;
+            }
+
+            str += (char) read;
+        }
+        return str;
     }
 
     public static void main(String[] args) throws IOException {
-        FileExercise fileExercise = new FileExercise();
+        FileExercise fileExercise = new FileExercise("a_file.txt");
         String str = fileExercise.read2Chars("a_file.txt");
         //char ch = fileExercise.readAChar("a_file.txt");
+        String strN = fileExercise.readNChars(10);
         System.out.println(str);
     }
 

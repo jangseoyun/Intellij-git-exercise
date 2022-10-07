@@ -16,7 +16,6 @@ public class AlphabetCntMap {
                         count ++;
                     }
                 }
-
                 addressMap.put(address.charAt(i), count);
                 count = 0;
             }

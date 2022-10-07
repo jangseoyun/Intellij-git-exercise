@@ -44,6 +44,7 @@ public class ReadFile {
 
     public static void main(String[] args) throws IOException{
         ReadFile readFile = new ReadFile("a_file.txt");//읽을 파일명 변수에 저장
+
         char c = readFile.readAByte("./a_file.txt");//메서드 호출 -> 한 바이트 가져오기
         System.out.println(c);
 
