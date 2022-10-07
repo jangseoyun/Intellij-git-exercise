@@ -41,6 +41,7 @@ public class PopulationStatistice {
         String str;
         while ((str = br.readLine()) != null) {
             System.out.println(str);
+            PopulationMove pm = parse(str);
         }
 
         br.close();
