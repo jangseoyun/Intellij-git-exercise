@@ -1,7 +1,5 @@
 package codelion.week3.day14.file;
 
-import com.sun.source.tree.LiteralTree;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -117,7 +115,8 @@ public class PopulationStatistice {
 
         List<String> cntResult = new ArrayList<>();
         for (String key : moveCntMap.keySet()) {
-            String s = String.format("key:%s value:%d\n", key, moveCntMap.get(key));
+            String[] fromTo = key.split(",");
+            String s = String.format("[%s, %s, %d]\n", fromTo[0], fromTo[1], moveCntMap.get(key));
             cntResult.add(s);
             //System.out.printf("key:%s value:%d\n", key, moveCntMap.get(key));
         }
