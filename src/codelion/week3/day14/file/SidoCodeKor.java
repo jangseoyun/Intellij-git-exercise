@@ -1,6 +1,6 @@
 package codelion.week3.day14.file;
 
-public class SidoCodeKor implements TranslationCode {
+public class SidoCodeKor implements TranslateCode {
     private String sidoKor;
 
     //행정구역 코드 서울 : 11 /부산 : 21 /대구 : 22 /인천 :23 /광주 : 24 /대전 : 25 /울산 :26
