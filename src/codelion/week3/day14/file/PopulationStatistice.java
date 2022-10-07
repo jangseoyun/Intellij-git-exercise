@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PopulationStatistice {
     public void readByLine2(String filename) {
@@ -34,17 +36,21 @@ public class PopulationStatistice {
         System.out.println(fileContents);
     }
 
-    public void readByLine(String filename) throws IOException {//한줄씩 읽는 기능
+    public List<PopulationMove> readByLine(String filename) throws IOException {//한줄씩 읽는 기능
+        List<PopulationMove> pml = new ArrayList<>();
         BufferedReader br = new BufferedReader(
                 new FileReader(filename)
         );
+
         String str;
         while ((str = br.readLine()) != null) {
             System.out.println(str);
             PopulationMove pm = parse(str);
+            pml.add(pm);
         }
 
         br.close();
+        return pml;
     }
 
     public PopulationMove parse(String data) {//한줄 읽어와서 PopulationMove 인스턴스
@@ -57,6 +63,7 @@ public class PopulationStatistice {
     public static void main(String[] args) throws IOException {
         String address = "/Users/seoyun/codeLion/2021_인구관련연간자료_20221007_32002.csv";
         PopulationStatistice ps = new PopulationStatistice();
-        ps.readByLine2(address);
+        List<PopulationMove> pml = ps.readByLine(address);
+        System.out.println(pml.size());
     }
 }
