@@ -15,6 +15,7 @@ public class PopulationStatistice {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
+                parse(line);
             }
         } catch (IOException e) {
             throw new RuntimeException();
