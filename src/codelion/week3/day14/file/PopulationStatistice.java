@@ -1,11 +1,15 @@
 package codelion.week3.day14.file;
 
+import com.sun.source.tree.LiteralTree;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PopulationStatistice {
     public void readByLine2(String filename) {
@@ -89,18 +93,36 @@ public class PopulationStatistice {
         return populationMove.getFromSido() + "," + populationMove.getToSido() + "\n";
     }
 
+    public Map<String, Integer> getMoveCntMap(List<PopulationMove> pml) {
+        Map<String, Integer> moveCntMap = new HashMap<>();
+        for (PopulationMove pm : pml) {
+            String key = pm.getFromSido() + "," + pm.getToSido();
+            if (moveCntMap.get(key) == null) {
+                moveCntMap.put(key, 1);
+            }
+            moveCntMap.put(key, moveCntMap.get(key) + 1);
+        }
+
+        return moveCntMap;
+    }
+
     public static void main(String[] args) throws IOException {
         String address = "./from_to.txt";
         PopulationStatistice ps = new PopulationStatistice();
         List<PopulationMove> pml = ps.readByLine(address);//파일 읽어온뒤 객체로 만들어서 리스트에 담기
 
-        List<String> strings = new ArrayList<>();
-        for (PopulationMove pm : pml) {
-            System.out.printf("전입:%s, 전출:%s\n", pm.getFromSido(), pm.getToSido());
-            /*String fromTo = ps.fromToString(pm);
-            strings.add(fromTo);*/
+        Map<String, Integer> moveCntMap = ps.getMoveCntMap(pml);
+        String targetName = "each_sido_cnt.txt";
+        ps.createAFile(targetName);
+
+        List<String> cntResult = new ArrayList<>();
+        for (String key : moveCntMap.keySet()) {
+            String s = String.format("key:%s value:%d\n", key, moveCntMap.get(key));
+            cntResult.add(s);
+            //System.out.printf("key:%s value:%d\n", key, moveCntMap.get(key));
         }
-        /*System.out.println(strings.size());
-        ps.write(strings, "./from_to.txt");*/
+
+        ps.write(cntResult, targetName);
+
     }
 }
