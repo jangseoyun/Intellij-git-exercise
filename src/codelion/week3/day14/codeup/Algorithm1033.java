@@ -1,0 +1,12 @@
+package codelion.week3.day14.codeup;
+
+import java.util.Scanner;
+
+public class Algorithm1033 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+        String result = Integer.toHexString(input).toUpperCase();
+        System.out.println(result);
+    }
+}
