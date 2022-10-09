@@ -109,7 +109,7 @@ public class PopulationStatistice {
         PopulationStatistice ps = new PopulationStatistice();
         List<PopulationMove> pml = ps.readByLine(address);//파일 읽어온뒤 객체로 만들어서 리스트에 담기
 
-        Map<String, Integer> moveCntMap = ps.getMoveCntMap(pml);
+        Map<String, Integer> moveCntMap = ps.getMoveCntMap(pml);//리스트 Map에 담기
         String targetName = "each_sido_cnt.txt";
         ps.createAFile(targetName);
 
