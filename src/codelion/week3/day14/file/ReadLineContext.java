@@ -11,7 +11,6 @@ public class ReadLineContext<T> {
     DoSomething<T> doSomething;
 
     public List<T> readByLine(String filename) throws IOException {//한줄씩 읽는 기능
-
         List<T> pmList = new ArrayList<>();
         BufferedReader br = new BufferedReader(
                 new FileReader(filename)

@@ -1,4 +1,4 @@
-package codelion.week3.day14.context.domain;
+package codelion.week3.day14.context.vo;
 
 public class PatientVo {
     /*

@@ -1,7 +1,7 @@
-package codelion.week3.day14.context.parser;
+package codelion.week3.day14.context.domain.parser;
 
 import codelion.week3.day14.context.context.Parser;
-import codelion.week3.day14.context.domain.PatientVo;
+import codelion.week3.day14.context.vo.PatientVo;
 
 public class PatientParser implements Parser<PatientVo> {
     @Override

@@ -1,4 +1,4 @@
-package codelion.week3.day14.context.domain;
+package codelion.week3.day14.context.vo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,18 +14,16 @@ public class PopulationMoveVo {
     public PopulationMoveVo(String fromSido, String toSido) {
         this.fromSido = Integer.parseInt(fromSido);
         this.toSido = Integer.parseInt(toSido);
-        this.sidoMap = setSidoMap();
+        this.sidoMap = getSidoMap();
     }
 
     public PopulationMoveVo(int fromSido, int toSido) {
         this.fromSido = fromSido;
         this.toSido = toSido;
-        this.sidoMap = setSidoMap();
-        this.fromSidoKorean = this.sidoMap.get(fromSido);
-        this.toSidoKorean = this.sidoMap.get(toSido);
+        this.sidoMap = getSidoMap();
     }
 
-    public Map<Integer, String> setSidoMap() {
+    public void setSidoMap() {
         this.sidoMap = new HashMap<>();
         sidoMap.put(11,"서울특별시");
         sidoMap.put(26,"부산광역시");
@@ -44,7 +42,6 @@ public class PopulationMoveVo {
         sidoMap.put(47,"경상북도");
         sidoMap.put(48,"경상남도");
         sidoMap.put(50,"제주특별자치도");
-        return sidoMap;
     }
 
     public int getFromSido() {
