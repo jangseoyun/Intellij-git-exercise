@@ -1,4 +1,4 @@
-package codelion.week4.day15;
+package codelion.week4.day15.algorithm;
 
 import java.util.Scanner;
 
