@@ -2,7 +2,7 @@ package codelion.week4.day16;
 
 public class Algorithm02 {
     public int[] getMax(int[] arr) {
-        int max = 0;
+        int max = arr[0]; //!!! arr이 음수인 경우 0으로 초기화하면 0이 max
         int maxIdx = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
