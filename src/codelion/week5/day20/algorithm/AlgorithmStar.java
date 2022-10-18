@@ -11,6 +11,6 @@ public class AlgorithmStar {
     }
 
     public static void main(String[] args) {
-        new AlgorithmStar().printStar(5, "");
+        new AlgorithmStar().printStar(5, "*");
     }
 }
